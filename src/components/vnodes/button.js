@@ -1,5 +1,5 @@
 import { createVNode, defineComponent } from 'vue'
-import '../assets/button.css'
+import '../../assets/button.css'
 
 export default defineComponent({
 	setup()

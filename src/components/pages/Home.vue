@@ -1,7 +1,7 @@
 <template>
 	<h1>Home</h1>
 	<p>
-		<img src="../assets/logo.png" alt="logo" />
+		<img src="../../assets/logo.png" alt="logo" />
 	</p>
 	<button @click="state.count++">count is: {{ state.count }}</button>
 	<Foo />
@@ -15,7 +15,6 @@
 		encrypted message:
     	<p class="encrypted-msg"></p>
 	</div>
-	<Test></Test>
 	<ImportType />
 </template>
 
@@ -23,18 +22,15 @@
 import foo from '@foo'
 import { msg as virtualMsg } from '@virtual-file'
 import { reactive, defineAsyncComponent } from 'vue'
-import Button from '../components/button'
+import Button from '../../components/vnodes/button'
 const ImportType = load('ImportType')
-const Test = defineAsyncComponent(() =>
-  	import('../views/Test.vue').then((mod) => mod.Foo)
-)
 const Foo = defineAsyncComponent(() =>
-  	import('../components/Foo').then((mod) => mod.Foo)
+  	import('../jsxes/Foo').then((mod) => mod.Foo)
 )
 function load(file) 
 {
   	return defineAsyncComponent(() => 
-		import(`../components/${file}.vue`))
+		import(`../${file}.vue`))
 }
 const url = import.meta.env.SSR ? import.meta.url : document.querySelector('.import-meta-url').textContent
 const protocol = new URL(url).protocol

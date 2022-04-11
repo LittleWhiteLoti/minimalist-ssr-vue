@@ -2,14 +2,16 @@ import { createMemoryHistory, createRouter as _createRouter, createWebHistory } 
 
 // Auto generates routes from vue files under ./pages
 // https://vitejs.dev/guide/features.html#glob-import
-const pages = import.meta.glob('./pages/*.vue')
+const pages = import.meta.glob('./components/pages/*.vue')
+//const pages = import.meta.glob('./pages/*.vue')
 //const pages = import.meta.glob('./views/*.vue')
 
 const routes = Object
 				    .keys(pages)
 				    .map((path) => 
 					{
-    					const name = path.match(/\.\/pages(.*)\.vue$/)[1].toLowerCase()
+						const name = path.match(/\.\/components\/pages(.*)\.vue$/)[1].toLowerCase()
+    					//const name = path.match(/\.\/pages(.*)\.vue$/)[1].toLowerCase()
   						//const name = path.match(/\.\/views(.*)\.vue$/)[1].toLowerCase()
   						return {
     						path: name === '/home' ? '/' : name,
