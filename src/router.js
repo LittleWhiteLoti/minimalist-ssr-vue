@@ -7,16 +7,16 @@ const pages = import.meta.glob('./components/pages/*.vue')
 //const pages = import.meta.glob('./views/*.vue')
 
 const routes = Object
-				    .keys(pages)
-				    .map((path) => 
+                    .keys(pages)
+                    .map((path) => 
 					{
 						const name = path.match(/\.\/components\/pages(.*)\.vue$/)[1].toLowerCase()
-    					//const name = path.match(/\.\/pages(.*)\.vue$/)[1].toLowerCase()
-  						//const name = path.match(/\.\/views(.*)\.vue$/)[1].toLowerCase()
-  						return {
-    						path: name === '/home' ? '/' : name,
-    						component: pages[path] // () => import('./pages/*.vue')
-  						}
+                        //const name = path.match(/\.\/pages(.*)\.vue$/)[1].toLowerCase()
+                        //const name = path.match(/\.\/views(.*)\.vue$/)[1].toLowerCase()
+                        return {
+                            path: name === '/home' ? '/' : name,
+                            component: pages[path] // () => import('./pages/*.vue')
+                        }
 					})
 
 export function createRouter() 
