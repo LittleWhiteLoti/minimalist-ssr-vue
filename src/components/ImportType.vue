@@ -3,6 +3,7 @@
 </template>
 
 <script setup lang="ts">
+/* eslint-disable */
 import { Foo } from 'dep-import-type/deep'
 const msg: Foo = {}
 </script>

@@ -13,7 +13,7 @@
 	<Button>CommonButton</Button>
 	<div>
 		encrypted message:
-    	<p class="encrypted-msg"></p>
+        <p class="encrypted-msg"></p>
 	</div>
 	<ImportType />
 </template>
@@ -25,14 +25,16 @@ import { reactive, defineAsyncComponent } from 'vue'
 import Button from '../../components/vnodes/button'
 const ImportType = load('ImportType')
 const Foo = defineAsyncComponent(() =>
-  	import('../jsxes/Foo').then((mod) => mod.Foo)
+    import('../jsxes/Foo').then((mod) => mod.Foo)
 )
 function load(file) 
 {
-  	return defineAsyncComponent(() => 
+    return defineAsyncComponent(() => 
 		import(`../${file}.vue`))
 }
-const url = import.meta.env.SSR ? import.meta.url : document.querySelector('.import-meta-url').textContent
+const url = import.meta.env.SSR 
+                ? import.meta.url 
+				: document.querySelector('.import-meta-url').textContent
 const protocol = new URL(url).protocol
 
 const state = reactive({
