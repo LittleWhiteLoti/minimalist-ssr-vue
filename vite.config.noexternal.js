@@ -1,7 +1,7 @@
 const config = require('./vite.config.js')
 /**
- * @type {import('vite').UserConfig}
- */
+    * @type {import('vite').UserConfig}
+*/
 module.exports = Object.assign(config, 
 {
     ssr: {
