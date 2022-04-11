@@ -1,0 +1,33 @@
+{
+    "env": {
+        // Sets environment so console can be used for debugging
+        "browser": true,
+        "node": true
+    },
+    "plugins": [
+        "babel"
+    ],
+    // Removes the import is reserved statement
+    // "parser": "@babel/eslint-parser",
+    // Use vue-eslint-parser instead of babel if the project includes vue files
+    "parser": "vue-eslint-parser",
+    "extends": [
+        "eslint:recommended",
+        "plugin:vue/vue3-recommended",
+        "prettier"
+    ],
+    "rules": {
+        // No mixing of spaces and tabs for indentation, 4 spaces only
+        "no-mixed-spaces-and-tabs": 1,
+        // Open curly brackets must be on a new line and not on a control line
+        "brace-style": ["error", "allman"],
+        // Code lines should only be a max length of 100 character
+        "max-len": ["error", { "code": 100 }],
+        // Turns off initialized but no used variables
+        "no-unused-vars": "off",
+        // Turns off empty object warning
+        "no-empty": "off",
+        // Turns off multi-worded component names required
+        "vue/multi-word-component-names": "off"
+    }
+}
